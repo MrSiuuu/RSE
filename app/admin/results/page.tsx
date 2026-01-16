@@ -11,13 +11,8 @@ type SessionResult = {
   id: string;
   score: number;
   completed_at: string;
-  participants: {
-    name: string;
-  };
-  access_codes: {
-    code: string;
-    label: string | null;
-  };
+  participants: { name: string }[];
+  access_codes: { code: string; label: string | null }[];
 };
 
 export default function AdminResultsPage() {
@@ -96,17 +91,20 @@ export default function AdminResultsPage() {
   const filteredSessions = sessions.filter((session) => {
     if (!searchTerm) return true;
     const searchLower = searchTerm.toLowerCase();
+    const participantName = session.participants?.[0]?.name || "";
+    const accessCode = session.access_codes?.[0]?.code || "";
+    const accessLabel = session.access_codes?.[0]?.label || "";
     return (
-      session.participants?.name?.toLowerCase().includes(searchLower) ||
-      session.access_codes?.code?.toLowerCase().includes(searchLower) ||
-      session.access_codes?.label?.toLowerCase().includes(searchLower)
+      participantName.toLowerCase().includes(searchLower) ||
+      accessCode.toLowerCase().includes(searchLower) ||
+      (accessLabel && accessLabel.toLowerCase().includes(searchLower))
     );
   });
 
   // Statistiques par code
   const statsByCode = codes.map((code) => {
     const codeSessions = sessions.filter(
-      (s: any) => s.access_codes?.code === code.code
+      (s: any) => s.access_codes?.[0]?.code === code.code
     );
     const averageScore =
       codeSessions.length > 0
@@ -278,12 +276,12 @@ export default function AdminResultsPage() {
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-full flex items-center justify-center">
                               <span className="text-indigo-600 font-semibold">
-                                {session.participants?.name?.charAt(0).toUpperCase() || "?"}
+                                {session.participants?.[0]?.name?.charAt(0).toUpperCase() || "?"}
                               </span>
                             </div>
                             <div className="ml-4">
                               <div className="text-sm font-medium text-gray-900">
-                                {session.participants?.name || "N/A"}
+                                {session.participants?.[0]?.name || "N/A"}
                               </div>
                             </div>
                           </div>
@@ -291,11 +289,11 @@ export default function AdminResultsPage() {
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center gap-2">
                             <span className="font-mono font-bold text-indigo-600">
-                              {session.access_codes?.code || "N/A"}
+                              {session.access_codes?.[0]?.code || "N/A"}
                             </span>
-                            {session.access_codes?.label && (
+                            {session.access_codes?.[0]?.label && (
                               <span className="text-sm text-gray-500">
-                                ({session.access_codes.label})
+                                ({session.access_codes[0].label})
                               </span>
                             )}
                           </div>
