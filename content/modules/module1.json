@@ -1,0 +1,305 @@
+{
+  "id": 1,
+  "number": 1,
+  "title": "Module 1 – Niveau Découverte",
+  "subtitle": "La RSE, c'est aussi pour moi !",
+  "estimatedDuration": "20 à 30 minutes",
+  "publicTarget": "Dirigeants et managers de PME ivoiriennes",
+  
+  "sections": [
+    {
+      "id": "welcome",
+      "type": "welcome",
+      "title": "Accueil & intention",
+      "content": {
+        "mainMessage": "La RSE, c'est aussi pour moi. Mieux vaut commencer petit que ne rien faire.",
+        "objectives": [
+          "Découvrir la RSE simplement",
+          "Se situer sans jugement",
+          "Identifier une première action concrète et réaliste"
+        ]
+      }
+    },
+    {
+      "id": "what-rse-is-not",
+      "type": "info",
+      "title": "Ce que la RSE n'est pas",
+      "content": {
+        "points": [
+          "Ce module n'est pas un contrôle",
+          "Ce n'est pas un audit",
+          "Il n'y a pas de bonne ou mauvaise note",
+          "La RSE n'est pas réservée aux grandes entreprises",
+          "Vous avancez à votre rythme",
+          "Commencer petit est normal"
+        ],
+        "message": "La RSE est une démarche volontaire et progressive."
+      }
+    },
+    {
+      "id": "positioning-quiz",
+      "type": "quiz",
+      "title": "Mon point de départ – Quiz de positionnement",
+      "intro": "Ce quiz n'est pas un examen. Il sert uniquement à situer votre entreprise aujourd'hui.",
+      "questions": [
+        {
+          "id": "q1",
+          "order": 1,
+          "text": "Avez-vous mis en place un tri sélectif dans votre entreprise ?",
+          "type": "yesno",
+          "options": [
+            { "value": "yes", "label": "Oui" },
+            { "value": "no", "label": "Non" }
+          ],
+          "feedback": {
+            "no": "Le tri est souvent la première action RSE simple, visible et peu coûteuse."
+          }
+        },
+        {
+          "id": "q2",
+          "order": 2,
+          "text": "Avez-vous rédigé une charte de conduite ou de valeurs (même simple) ?",
+          "type": "yesno",
+          "options": [
+            { "value": "yes", "label": "Oui" },
+            { "value": "no", "label": "Non" }
+          ],
+          "feedback": {
+            "no": "Une charte peut tenir sur une page. L'important est de fixer des règles claires."
+          }
+        },
+        {
+          "id": "q3",
+          "order": 3,
+          "text": "Vos employés ont-ils accès à une forme de couverture ou d'aide (santé, sécurité, soutien) ?",
+          "type": "yesno",
+          "options": [
+            { "value": "yes", "label": "Oui" },
+            { "value": "no", "label": "Non" }
+          ],
+          "feedback": {
+            "no": "La RSE commence aussi par le bien-être des personnes qui font vivre l'entreprise."
+          }
+        },
+        {
+          "id": "q4",
+          "order": 4,
+          "text": "Vos clients ou partenaires connaissent-ils vos engagements ou bonnes pratiques ?",
+          "type": "yesno",
+          "options": [
+            { "value": "yes", "label": "Oui" },
+            { "value": "no", "label": "Non" }
+          ],
+          "feedback": {
+            "no": "Beaucoup d'entreprises font déjà des choses positives sans jamais les valoriser."
+          }
+        },
+        {
+          "id": "q5",
+          "order": 5,
+          "text": "Participez-vous à la vie locale (emplois, partenariats, dons, actions communautaires) ?",
+          "type": "yesno",
+          "options": [
+            { "value": "yes", "label": "Oui" },
+            { "value": "no", "label": "Non" }
+          ],
+          "feedback": {
+            "no": "L'engagement local peut commencer très modestement, à l'échelle de l'entreprise."
+          }
+        }
+      ],
+      "contextualization": "Dans beaucoup de PME ivoiriennes, des pratiques responsables existent déjà, mais ne sont pas formalisées. Ce module sert à les rendre visibles et progressives.",
+      "results": [
+        {
+          "range": "0–1 Oui",
+          "label": "Curieux",
+          "message": "Vous découvrez la RSE. Ce module est fait pour vous."
+        },
+        {
+          "range": "2–3 Oui",
+          "label": "Engagé débutant",
+          "message": "Vous avez déjà des pratiques responsables. Il est temps de les structurer."
+        },
+        {
+          "range": "4–5 Oui",
+          "label": "RSE sans le savoir",
+          "message": "Votre entreprise agit déjà de manière responsable. Il faut maintenant valoriser ces actions."
+        }
+      ]
+    },
+    {
+      "id": "key-concepts",
+      "type": "concepts",
+      "title": "Comprendre la RSE – Notions clés",
+      "concepts": [
+        {
+          "term": "RSE",
+          "definition": "Intégrer l'impact social, environnemental et économique dans l'entreprise.",
+          "example": "Former ses employés et limiter le gaspillage est déjà une démarche RSE."
+        },
+        {
+          "term": "ESG",
+          "definition": "Environnement, Social, Gouvernance",
+          "items": [
+            "Environnement",
+            "Social",
+            "Gouvernance"
+          ],
+          "explanation": "L'ESG est souvent utilisé par les financeurs. La RSE permet d'y répondre progressivement."
+        },
+        {
+          "term": "ODD",
+          "definition": "17 Objectifs de Développement Durable définis par l'ONU.",
+          "examples": [
+            "Emploi local → ODD 8",
+            "Réduction des déchets → ODD 12"
+          ]
+        },
+        {
+          "term": "Parties prenantes",
+          "definition": "Employés, clients, fournisseurs, communauté locale.",
+          "exercise": "Cochez les deux parties prenantes les plus importantes pour votre entreprise aujourd'hui."
+        }
+      ],
+      "benefits": {
+        "title": "Pourquoi la RSE est utile pour une PME ivoirienne",
+        "points": [
+          {
+            "title": "Fidélise les équipes",
+            "detail": "Moins de départs, plus d'implication"
+          },
+          {
+            "title": "Réduit les coûts",
+            "detail": "Énergie, gaspillage, conflits"
+          },
+          {
+            "title": "Ouvre des opportunités",
+            "detail": "Financements, partenaires, appels d'offres"
+          }
+        ]
+      }
+    },
+    {
+      "id": "first-steps",
+      "type": "gestures",
+      "title": "Premiers pas possibles – Les 5 petits gestes RSE",
+      "intro": "Pour chaque geste :",
+      "options": [
+        "Je le fais déjà",
+        "Je peux le faire rapidement",
+        "Trop difficile pour le moment"
+      ],
+      "gestures": [
+        {
+          "id": "gesture1",
+          "title": "Trier les déchets",
+          "impact": "moins de gaspillage",
+          "tip": "Commencez par le papier ou le plastique."
+        },
+        {
+          "id": "gesture2",
+          "title": "Utiliser des ampoules LED",
+          "impact": "réduction des coûts énergétiques"
+        },
+        {
+          "id": "gesture3",
+          "title": "Adopter une charte éthique",
+          "impact": "climat de confiance"
+        },
+        {
+          "id": "gesture4",
+          "title": "Encourager la formation",
+          "impact": "motivation et montée en compétences"
+        },
+        {
+          "id": "gesture5",
+          "title": "Impliquer les clients",
+          "impact": "valorisation de l'engagement"
+        }
+      ]
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "title": "Témoignages inspirants",
+      "testimonials": [
+        {
+          "id": "testimonial1",
+          "title": "Atelier de couture – Cocody",
+          "content": "Nous avons commencé par installer un système de tri pour les chutes de tissu. Nos employés ont vite compris l'utilité, et maintenant nous recyclons 80% de nos déchets. Les clients apprécient notre démarche et cela nous a ouvert de nouvelles opportunités commerciales.",
+          "author": "Mariam K., Directrice"
+        },
+        {
+          "id": "testimonial2",
+          "title": "Épicerie de quartier – Abobo",
+          "content": "Nous avons créé une charte simple avec nos employés : respect, ponctualité, service client. Ça a tout changé ! L'ambiance de travail est meilleure, les clients reviennent plus souvent, et nos ventes ont augmenté de 15% en 6 mois.",
+          "author": "Amadou T., Gérant"
+        },
+        {
+          "id": "testimonial3",
+          "title": "Coopérative agroalimentaire – Yamoussoukro",
+          "content": "Nous avons formé nos producteurs aux bonnes pratiques environnementales. Résultat : une meilleure qualité de produits, moins de pertes, et maintenant nous exportons vers 3 nouveaux pays. La RSE, c'est vraiment un investissement !",
+          "author": "Koffi B., Président"
+        }
+      ],
+      "interactionOptions": [
+        "Ce témoignage me parle",
+        "Peu applicable à mon activité"
+      ]
+    },
+    {
+      "id": "first-action",
+      "type": "form",
+      "title": "Ma première action RSE",
+      "fields": [
+        {
+          "id": "action_name",
+          "label": "Nom de l'action",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "responsible",
+          "label": "Responsable",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "objective",
+          "label": "Objectif",
+          "type": "textarea",
+          "required": true
+        },
+        {
+          "id": "deadline",
+          "label": "Délai",
+          "type": "text",
+          "required": true
+        },
+        {
+          "id": "indicator",
+          "label": "Indicateur",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "message": "Une action simple, bien suivie, vaut mieux qu'un grand plan non appliqué."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "title": "Récapitulatif & projection",
+      "summaryPoints": [
+        "Votre profil RSE",
+        "Les gestes sélectionnés",
+        "Votre première action définie"
+      ],
+      "finalMessage": "Vous venez de poser la première pierre de votre démarche RSE. Vous n'avez pas besoin d'être parfait pour aller plus loin.",
+      "nextStep": {
+        "title": "Prochaine étape :",
+        "module": "Module 2 – Niveau Intermédiaire",
+        "description": "Structurer votre démarche et planifier vos actions."
+      }
+    }
+  ]
+}
