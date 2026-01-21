@@ -106,7 +106,7 @@ export default function AccessPage() {
               onChange={(e) => setCode(e.target.value.toUpperCase())}
               placeholder="ABC123"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white placeholder:text-gray-400"
               maxLength={20}
             />
           </div>
@@ -122,7 +122,7 @@ export default function AccessPage() {
               onChange={(e) => setName(e.target.value)}
               placeholder="Jean Dupont"
               required
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white placeholder:text-gray-400"
             />
           </div>
 

@@ -24,12 +24,12 @@ export default function HomePage() {
               Module de formation RSE adapté aux PME ivoiriennes. 
               Découvrez la RSE simplement et identifiez votre première action concrète.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/access">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link href="/access" className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-2 hover:bg-indigo-50 transition-colors"
+                  className="w-full sm:w-auto bg-white text-indigo-600 px-8 py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 hover:bg-indigo-50 transition-colors"
                 >
                   Commencer le module
                   <ArrowRight className="w-5 h-5" />
@@ -38,7 +38,7 @@ export default function HomePage() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors"
+                className="w-full sm:w-auto border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-colors"
               >
                 En savoir plus
               </motion.button>
