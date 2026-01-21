@@ -148,7 +148,7 @@ export default function ModulePage({ params }: { params: { id: string } }) {
 
     // Si on est dans la section "concepts" avec "Parties prenantes"
     if (currentSection.type === "concepts" && currentSection.concepts) {
-      const stakeholderConcept = currentSection.concepts.find((c: any) => c.term === "Parties prenantes");
+      const stakeholderConcept = currentSection.concepts.find((c: any) => c.term === "Parties prenantes") as any;
       if (stakeholderConcept && stakeholderConcept.stakeholderSteps) {
         // Valider currentStakeholderStep
         if (currentStakeholderStep < 0 || currentStakeholderStep >= stakeholderConcept.stakeholderSteps.length) {
