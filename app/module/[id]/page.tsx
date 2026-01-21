@@ -139,6 +139,25 @@ export default function ModulePage({ params }: { params: { id: string } }) {
     // createSession n'est pas dans les dépendances car toutes ses dépendances (participantId, codeId, moduleData, sessionId, isCreatingSession, id, supabase) sont soit dans les dépendances du useEffect, soit stables
   }, [participantId, codeId, moduleData, sessionId, isCreatingSession]); // Toutes les dépendances nécessaires (createSession utilise ces valeurs)
 
+  // Valider et corriger les indices invalides (évite les boucles infinies)
+  useEffect(() => {
+    if (!moduleData) return;
+    
+    const currentSection = moduleData.sections[currentSectionIndex];
+    if (!currentSection) return;
+
+    // Si on est dans la section "concepts" avec "Parties prenantes"
+    if (currentSection.type === "concepts" && currentSection.concepts) {
+      const stakeholderConcept = currentSection.concepts.find((c: any) => c.term === "Parties prenantes");
+      if (stakeholderConcept && stakeholderConcept.stakeholderSteps) {
+        // Valider currentStakeholderStep
+        if (currentStakeholderStep < 0 || currentStakeholderStep >= stakeholderConcept.stakeholderSteps.length) {
+          setCurrentStakeholderStep(0);
+        }
+      }
+    }
+  }, [moduleData, currentSectionIndex, currentStakeholderStep]);
+
   const handleNext = () => {
     if (!moduleData) return;
 
@@ -985,13 +1004,13 @@ function renderSection(
         }
 
         // Vérifier que currentStakeholderStep est valide avant d'accéder à stakeholderSteps
+        // Ne pas appeler setState ici pour éviter les boucles infinies
         if (handlers.currentStakeholderStep < 0 || handlers.currentStakeholderStep >= stakeholderSteps.length) {
-          // Réinitialiser à 0 si l'index est invalide
-          handlers.setCurrentStakeholderStep(0);
+          // Retourner un message d'erreur sans changer l'état (le useEffect corrigera)
           return (
             <div className="w-full mx-auto px-3 sm:px-4 md:px-6 max-w-4xl">
               <div className="bg-white rounded-[30px] sm:rounded-[40px] p-6 sm:p-8 shadow-xl border-2 border-gray-200 text-center">
-                <p className="text-gray-600">Réinitialisation de l'étape...</p>
+                <p className="text-gray-600">Chargement...</p>
               </div>
             </div>
           );
@@ -1000,13 +1019,14 @@ function renderSection(
         const currentStep = stakeholderSteps[handlers.currentStakeholderStep];
 
         // Vérification de sécurité supplémentaire
-        if (!currentStep || !currentStep.icon || !currentStep.title || !currentStep.explanation) {
-          // Réinitialiser à 0 si le step est invalide
-          handlers.setCurrentStakeholderStep(0);
+        // Ne pas appeler setState ici pour éviter les boucles infinies
+        // NOTE: `icon` peut être volontairement vide (""), donc on ne doit pas le considérer comme invalide.
+        if (!currentStep || !currentStep.title || !currentStep.explanation) {
+          // Retourner un message d'erreur sans changer l'état (le useEffect corrigera)
           return (
             <div className="w-full mx-auto px-3 sm:px-4 md:px-6 max-w-4xl">
               <div className="bg-white rounded-[30px] sm:rounded-[40px] p-6 sm:p-8 shadow-xl border-2 border-gray-200 text-center">
-                <p className="text-gray-600">Erreur de chargement de l'étape. Réinitialisation...</p>
+                <p className="text-gray-600">Chargement de l'étape...</p>
               </div>
             </div>
           );
